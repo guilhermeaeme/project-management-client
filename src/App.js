@@ -51,9 +51,9 @@ class App extends Component {
         <div className="App">
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
           <Switch>
-            <ProtectedRoute exact path="/projects" component={ProjectList} />
-            <ProtectedRoute exact path="/projects/:id" component={ProjectDetails} />
-            <ProtectedRoute exact path="/projects/:id/tasks/:taskId" component={TaskDetails} /> {/* <== !!! */}
+            <ProtectedRoute user={this.state.loggedInUser} exact path="/projects" component={ProjectList} />
+            <ProtectedRoute user={this.state.loggedInUser} exact path="/projects/:id" component={ProjectDetails} />
+            <ProtectedRoute user={this.state.loggedInUser} exact path="/projects/:id/tasks/:taskId" component={TaskDetails} /> {/* <== !!! */}
           </Switch>
         </div>
       );
@@ -64,9 +64,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser} />} />
             <Route exact path='/' render={() => <Login getUser={this.getTheUser}/>}/>
-            <ProtectedRoute exact path="/projects" component={ProjectList} />
-            <ProtectedRoute exact path="/projects/:id" component={ProjectDetails} />
-            <ProtectedRoute exact path="/projects/:id/tasks/:taskId" component={TaskDetails} /> {/* <== !!! */}
+            <ProtectedRoute user={this.state.loggedInUser} exact path="/projects" component={ProjectList} />
+            <ProtectedRoute user={this.state.loggedInUser} exact path="/projects/:id" component={ProjectDetails} />
+            <ProtectedRoute user={this.state.loggedInUser} exact path="/projects/:id/tasks/:taskId" component={TaskDetails} /> {/* <== !!! */}
           </Switch>
         </div>
       );
