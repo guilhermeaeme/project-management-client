@@ -61,7 +61,7 @@ class ProjectDetails extends Component {
   }
 
   ownershipCheck = (project) => {
-    if (this.props.loggedInUser && project.owner == this.props.loggedInUser._id) {
+    if (this.props.loggedInUser && project.owner === this.props.loggedInUser._id) {
       return (
         <div>
           <div>{this.renderEditForm()} </div>
